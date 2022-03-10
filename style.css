@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bebas+Neue&family=Bree+Serif&family=Lobster&display=swap');
+:root {
+    --title-font: 'Bebas Neue', cursive;
+    --title-secondary: 'Lobster', cursive;
+    --description-font: 'Bree Serif', serif;
+    --bg-color: #6E6E6E;
+    --primary-color: #BCFD4C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 3em 100vh auto 10em;
+    grid-template-areas: "navbar" "header" "services" "footer";
+    background-color: var(--bg-color);
+    font-family: var(--description-font);
+}
+
+
+/* Navbar */
+
+#navbar {
+    grid-area: navbar;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+#nav-ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 25px;
+}
+
+#nav-ul li {
+    padding: 5px 10px;
+    margin: 8px 15px;
+    transition: all;
+    color: white;
+}
+
+#nav-ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    font-size: 1.6em;
+    font-family: var(--title-secondary);
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#header::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 15vh;
+    left: 0;
+    background: url(images/bg02.jpg) no-repeat center center/cover;
+    opacity: 0.55;
+    z-index: -1;
+}
+
+#header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px 130px;
+    color: white;
+}
+
+#header-section {
+    display: flex;
+    flex-direction: column
+}
+
+#header-heading {
+    font-family: var(--title-font);
+    font-size: 6em;
+    color: white;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+}
+
+#header-secondary-heading {
+    color: black;
+}
+
+#services {
+    grid-area: services;
+}
+
+#footer {
+    grid-area: footer;
+}
